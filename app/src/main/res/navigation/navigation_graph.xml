@@ -11,8 +11,12 @@
         android:label="fragment_first"
         tools:layout="@layout/fragment_first" >
         <action
-            android:id="@+id/action_firstFragment_to_secondFragment2"
+            android:id="@+id/action_firstFragment_to_secondFragment"
             app:destination="@id/secondFragment" />
+        <argument
+            android:name="username"
+            app:argType="string"
+            android:defaultValue="testUserName" />
     </fragment>
     <fragment
         android:id="@+id/secondFragment"
@@ -20,7 +24,7 @@
         android:label="fragment_second"
         tools:layout="@layout/fragment_second" >
         <action
-            android:id="@+id/action_secondFragment_to_firstFragment2"
+            android:id="@+id/action_secondFragment_to_firstFragment"
             app:destination="@id/firstFragment" />
     </fragment>
 </navigation>

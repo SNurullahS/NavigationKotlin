@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import androidx.navigation.Navigation
 
 class SecondFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,6 +25,16 @@ class SecondFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
 
+        val nextButton: Button = view.findViewById(R.id.previousButton)
+        nextButton.setOnClickListener {
 
+
+            arguments?.let { bundle ->
+                //arguments get form this section
+            }
+
+            val action = SecondFragmentDirections.actionSecondFragmentToFirstFragment()
+            Navigation.findNavController(it).navigate(action)
+        }
     }
 }
